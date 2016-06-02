@@ -18,7 +18,7 @@ OPTION 2:
 
 1. git clone https://github.com/AbhishekNose/FarmerFranksFruitStand.git
 2. cd into the folder
-3. bundle install
+3. bundle install --without production
 4. bundle exec rails server
 	* Use whatever command you use to start the server.
 
