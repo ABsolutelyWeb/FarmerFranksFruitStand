@@ -1,0 +1,47 @@
+<%= render 'navbar' %>
+<div class="container">
+    <table align="center">
+        <thead>
+            
+        </thead>
+        <tbody>
+            <!-- populating data array of hashes -->
+            <% @data.each do |record| %>
+                <tr>
+                    <td>
+                        <!-- checking if image exists in images folder -->
+                        <!-- also please note that name of image will be same as item -->
+                        <% image_name = record["item"] + ".png" %>
+                        
+                        <!-- method is defined in fruit helpers -->
+                        <!-- check wheter image is there or replace with dummy image -->
+                        <% unless asset_exist?(image_name) %>
+                            <% image_name = "missing.png" %>
+                        <% end %>
+                        
+                        <div class="img-class"><img src="<%= image_url(image_name) %>"></div>
+                    </td>
+                    
+                    <td>
+                        <br>
+                        <h3 class="food-header"><i class="fa fa-cutlery" aria-hidden="true"></i> <%= record["item"] %></h3> <br>
+                        Category: <%= record["category"] %> <br>
+                        Farm Name: <%= record["farm_name"] %> <br><br>
+                        
+                        <i class="fa fa-user" aria-hidden="true"></i> Farmer ID: <%= record["farmer_id"] %> <br>
+                        <i class="fa fa-building" aria-hidden="true"></i> <%= record["business"] %> <br>
+                        
+                        <!-- address is nested inside location tag -->
+                        <% human_address = JSON.parse(record["location_1"]["human_address"]) %>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> <%= "#{human_address["address"]}, #{human_address["city"]}, #{human_address["state"]}, #{human_address["zip"]}" %> <br>
+                        
+                        <i class="fa fa-phone" aria-hidden="true"></i> <%= record["phone1"] %><br>
+                        <br>
+                    </td>
+                </tr>
+        
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br><br><br>

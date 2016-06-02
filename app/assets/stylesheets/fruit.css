@@ -1,0 +1,8 @@
+table td {
+    border-bottom: 2px solid black;
+}
+
+table td img {
+    height: 100px;
+    width: 100px;
+}

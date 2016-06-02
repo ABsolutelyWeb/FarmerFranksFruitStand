@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<% if action_name === "homepage" %>
+  <html class="body-change">
+<% else %>
+  <html>
+<% end %>   
+
+<head>
+  <%= favicon_link_tag 'favicon.png' %> 
+  <title>Farmer Frank's Stand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Berkshire+Swash', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <% if action_name === "homepage" %>
+    <%= stylesheet_link_tag "homepage" if controller_name == "homepage" %>
+  <% end %>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<% if action_name === "homepage" %>
+  <body class="body-change">
+<% else %>
+  <body>
+<% end %>    
+
+<%= yield %>
+
+</body>
+</html>
