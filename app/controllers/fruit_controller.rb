@@ -3,7 +3,7 @@ require 'open-uri'
 
 class FruitController < ApplicationController
   def import
-    url = "http://di-interview-project.elasticbeanstalk.com/assignments/fruit/data"
+    url = "http://di-interview-project.elasticbeanstalk.com/assignments/fruit/data?email=agupta9@ucsc.edu"
     
     # getting json from above url (simple get request)
     json_string = open(url).read
