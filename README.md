@@ -1,5 +1,8 @@
 # Farmer Frank's Fruit Stand: A JSON Display Application
 
+## UPDATE
+Application no longer works since host removed JSON data. However, the code is still available to examine.
+
 ## Introduction
 I created a web application that takes JSON data from a source and displays specific information to a view. It displays a wide array of fruits for sale by various farms in Connecticut. My application does NOT require any for-pay software to function.
  
