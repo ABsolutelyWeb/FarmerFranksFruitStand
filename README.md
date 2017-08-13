@@ -40,6 +40,3 @@ Other Noteworthy Tools:
 
 Noteworthy Gems:
 * **Autoprefixer** (automatically makes CSS cross-platform)
-
-## DISCLAIMER
-Avoid compiling application in Windows since certain images will be overridden since Windows does not seem to differentiate between apples.png and Apple.png.
